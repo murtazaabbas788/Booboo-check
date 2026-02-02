@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>superLOVE💘</title>
+  <title>Love ❤️</title>
+
+  <!-- Stylish romantic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
   <style>
     /* Background gradient animation */
     body {
@@ -16,7 +20,7 @@
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
       overflow: hidden;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Dancing Script', cursive;
     }
 
     @keyframes gradientBG {
@@ -25,19 +29,21 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Centered message */
+    /* Centered romantic message */
     h1 {
       color: white;
       text-align: center;
-      font-size: 3em;
+      font-size: 2.2em; /* smaller and better scale */
       z-index: 2;
       animation: pulse 2s infinite;
       text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      line-height: 1.4;
+      max-width: 90%;
     }
 
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+      50% { transform: scale(1.08); }
       100% { transform: scale(1); }
     }
 
@@ -60,9 +66,8 @@
 </head>
 <body>
 
-<h1>You said YES 😍❤️<br>I love you too Begum jee, now lipstick 😋💖</h1>
+<h1>Hehe, You said YES 😍❤️<br>I love you too begum jee, now lipstick😋💘 </h1>
 
-<!-- Hearts container -->
 <script>
   // Create multiple floating hearts
   const colors = ["#ff4b5c", "#ff758c", "#ff9a9e", "#ffd1dc", "#ffb6c1"];
@@ -73,7 +78,7 @@
     heart.classList.add('heart');
     heart.textContent = "❤️";
     heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.fontSize = (Math.random() * 30 + 20) + "px";
+    heart.style.fontSize = (Math.random() * 30 + 15) + "px"; // slightly smaller hearts
     heart.style.animationDuration = (Math.random() * 10 + 5) + "s";
     heart.style.animationDelay = (Math.random() * 5) + "s";
     heart.style.color = colors[Math.floor(Math.random() * colors.length)];
