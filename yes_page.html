@@ -3,88 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>superLOVE❤️</title>
+  <title>Yes ❤️</title>
 
   <!-- Stylish romantic font -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
-    /* Background gradient animation */
     body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Great Vibes', cursive;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ff758c, #ff4b5c);
+      background-size: 300% 300%;
+      animation: bgShift 15s ease infinite;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ff4b5c, #ff758c);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      overflow: hidden;
-      font-family: 'Dancing Script', cursive;
+      height: 100vh;
     }
 
-    @keyframes gradientBG {
+    @keyframes bgShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Centered romantic message */
     h1 {
       color: white;
+      font-size: 3em;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.4);
       text-align: center;
-      font-size: 2.2em; /* smaller and better scale */
       z-index: 2;
-      animation: pulse 2s infinite;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-      line-height: 1.4;
-      max-width: 70%;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
     }
 
     /* Floating hearts */
     .heart {
       position: absolute;
-      font-size: 2em;
-      color: pink;
-      opacity: 0.7;
-      animation: floatUp linear infinite;
+      font-size: 26px;
+      animation: rise 8s linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
     }
 
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
-      10% { opacity: 1; }
-      100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+    @keyframes rise {
+      0% {transform: translateY(100vh) scale(0.8);}
+      50% {opacity:1;}
+      100% {transform: translateY(-150px) scale(1.2); opacity: 0;}
     }
 
+    /* Confetti when loaded */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      animation: fly 4s ease-in infinite;
+      opacity: 0;
+    }
+
+    @keyframes fly {
+      0% {opacity: 1; transform: translateY(0) rotate(0);}
+      100% {opacity: 0; transform: translateY(-500px) rotate(720deg);}
+    }
   </style>
 </head>
+
 <body>
 
 <h1> Hehe,You said YES❤️<br>I love you too begum jee, now lipstick😋💘 </h1>
 
 <script>
-  // Create multiple floating hearts
-  const colors = ["#ff4b5c", "#ff758c", "#ff9a9e", "#ffd1dc", "#ffb6c1"];
-  const numHearts = 20;
-
-  for (let i = 0; i < numHearts; i++) {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
+  // Floating hearts
+  const heartColors = ["#ff4b5c","#ff758c","#ff9a9e","#ffd1dc","#ffb6c1"];
+  for(let i=0; i<25; i++){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
     heart.textContent = "❤️";
     heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.fontSize = (Math.random() * 30 + 15) + "px"; // slightly smaller hearts
-    heart.style.animationDuration = (Math.random() * 10 + 5) + "s";
-    heart.style.animationDelay = (Math.random() * 5) + "s";
-    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+    heart.style.color = heartColors[Math.floor(Math.random()*heartColors.length)];
+    heart.style.animationDuration = (Math.random() * 8 + 5) + "s";
+    heart.style.fontSize = (Math.random() * 30 + 20) + "px";
     document.body.appendChild(heart);
+  }
+
+  // Confetti burst effect
+  for(let i=0; i<50; i++){
+    const conf = document.createElement("div");
+    conf.classList.add("confetti");
+    conf.style.left = Math.random() * window.innerWidth + "px";
+    conf.style.backgroundColor = heartColors[Math.floor(Math.random() * heartColors.length)];
+    conf.style.animationDelay = (Math.random() * 2) + "s";
+    document.body.appendChild(conf);
   }
 </script>
 
 </body>
 </html>
+
